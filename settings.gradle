@@ -1,0 +1,2 @@
+include 'serenity-web-todomvc-core',
+        'jbehave-without-examples'

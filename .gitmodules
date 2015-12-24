@@ -1,0 +1,3 @@
+[submodule "serenity-web-todomvc-core"]
+	path = serenity-web-todomvc-core
+	url = git@github.com:serenity-bdd/serenity-web-todomvc-core.git
