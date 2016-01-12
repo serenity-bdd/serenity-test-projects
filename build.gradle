@@ -6,7 +6,7 @@ repositories {
 }
 
 ext {
-    serenity_version = "1.1.22-rc.11"
+    serenity_version = "1.1.25-SNAPSHOT"
     serenity_jbehave_version = "1.5.0"
     serenity_cucumber_version = "1.1.2"
 }
@@ -36,7 +36,7 @@ subprojects {
     }
     buildscript {
         ext {
-            serenity_gradle_plugin_version = "1.1.5"
+            serenity_gradle_plugin_version = "1.1.25-SNAPSHOT"
         }
         repositories {
             mavenLocal()
