@@ -4,7 +4,7 @@ import net.serenitybdd.web.todosmvc.model.TodoStatusFilter;
 import net.serenitybdd.web.todosmvc.pages.components.FilterBar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.tasks.Click;
+import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
