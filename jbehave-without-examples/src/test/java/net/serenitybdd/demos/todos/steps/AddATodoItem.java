@@ -1,10 +1,10 @@
 package net.serenitybdd.demos.todos.steps;
 
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.web.todosmvc.pages.components.ToDoList;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.tasks.Enter;
-import net.serenitybdd.screenplay.tasks.Hit;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
