@@ -20,8 +20,6 @@ buildscript {
 }
 
 apply plugin: "java"
-apply plugin: "eclipse"
-apply plugin: "idea"
 apply plugin: "net.serenity-bdd.aggregator"
 
 
@@ -39,7 +37,7 @@ dependencies {
 
 
     compile 'org.slf4j:slf4j-simple:1.7.12'
-    compile 'org.codehaus.groovy:groovy-all:2.3.10'
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
     compile 'junit:junit:4.12'
     compile 'com.googlecode.lambdaj:lambdaj:2.3.3'
     compile 'org.assertj:assertj-core:3.1.0'
@@ -47,13 +45,16 @@ dependencies {
 
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}
 
 test {
     testLogging {
        showStandardStreams = true
     }
     def properties = System.getProperties()
-    properties.setProperty("serenity.outputDirectory", "${projectDir.toPath().resolve("target").resolve("site").resolve("serenity")}")
+//   properties.setProperty("serenity.outputDirectory", "${projectDir.toPath().resolve("target").resolve("site").resolve("serenity")}")
     systemProperties properties
     maxParallelForks = Runtime.runtime.availableProcessors()
 }

@@ -2,10 +2,17 @@
 
 Here you can find some examples of using Serenity BDD. This repo is used as git submodule
 
+## gradle
 
-To buil this project you should (after you clone it):
+To buil this project you should:
 
  - init all submodules with command ```git submodule init ```
  - update all submodule with command ```git submodule update ```
  - init wrapper to be sure that we use same gradle ```gradle wrapper ```
  - run gradle build ```./gradlew clean build ```
+
+## maven
+
+To build this project(with submodules) you should
+
+ - run ``` mvn clean verify``` 
