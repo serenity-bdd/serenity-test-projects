@@ -1,4 +1,5 @@
 group = 'net.serenity-bdd'
+apply plugin: "java"
 
 repositories {
     mavenLocal()
@@ -6,9 +7,9 @@ repositories {
 }
 
 ext {
-    serenity_version = "1.1.25-SNAPSHOT"
-    serenity_jbehave_version = "1.5.0"
-    serenity_cucumber_version = "1.1.2"
+    serenityCoreVersion = "1.1.25-SNAPSHOT"
+    serenityJBehaveVersion = "1.5.0"
+    serenityCucumberVersion = "1.1.2"
 }
 
 task wrapper(type: Wrapper) {
@@ -23,11 +24,11 @@ subprojects {
 
     configurations.all {
         def dependencies = [
-                "net.serenity-bdd:serenity-gradle-plugin": "${serenity_version}",
-                "net.serenity-bdd:serenity-core"         : "${serenity_version}",
-                "net.serenity-bdd:serenity-junit"        : "${serenity_version}",
-                "net.serenity-bdd:serenity-journey"      : "${serenity_version}",
-                "net.serenity-bdd:browse-the-web"        : "${serenity_version}"]
+                "net.serenity-bdd:serenity-gradle-plugin": "${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-core"         : "${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-junit"        : "${serenityCoreVersion}",
+                "net.serenity-bdd:serenity-journey"      : "${serenityCoreVersion}",
+                "net.serenity-bdd:browse-the-web"        : "${serenityCoreVersion}"]
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
             if (dependencies["${details.requested.group}:${details.requested.name}"]) {
                 details.useVersion dependencies["${details.requested.group}:${details.requested.name}"]
@@ -38,7 +39,7 @@ subprojects {
 
     buildscript {
         ext {
-            serenity_gradle_plugin_version = "1.1.25-SNAPSHOT"
+            serenityGradlePluginVersion = "1.1.25-SNAPSHOT"
         }
         repositories {
             mavenLocal()
@@ -46,7 +47,7 @@ subprojects {
         }
         configurations.all {
             def dependencies = [
-                    "net.serenity-bdd:serenity-gradle-plugin": "${serenity_gradle_plugin_version}"]
+                    "net.serenity-bdd:serenity-gradle-plugin": "${serenityGradlePluginVersion}"]
             resolutionStrategy.eachDependency { DependencyResolveDetails details ->
                 if (dependencies["${details.requested.group}:${details.requested.name}"]) {
                     details.useVersion dependencies["${details.requested.group}:${details.requested.name}"]

@@ -1,12 +1,14 @@
+group = 'net.serenity-bdd'
+
 repositories {
     mavenLocal()
     jcenter()
 }
 
 ext{
-    serenity_version = "1.1.24"
-    serenity_jbehave_version = "1.5.0"
-    serenity_cucumber_version = "1.1.2"
+    serenityCoreVersion = "1.1.24"
+    serenityJBehaveVersion = "1.5.0"
+    serenityCucumberVersion = "1.1.2"
 }
 
 buildscript {
@@ -28,12 +30,12 @@ println "project.serenity.outputDirectory= ${project.serenity.outputDirectory}"
 dependencies {
     compile localGroovy()
     compile project(':serenity-web-todomvc-core')
-    compile "net.serenity-bdd:serenity-core:$serenity_version"
-    compile "net.serenity-bdd:serenity-junit:$serenity_version"
-    compile("net.serenity-bdd:serenity-journey:$serenity_version")
-    compile("net.serenity-bdd:browse-the-web:$serenity_version")
-    compile("net.serenity-bdd:serenity-cucumber:$serenity_cucumber_version")
-    compile("net.serenity-bdd:serenity-jbehave:$serenity_jbehave_version")
+    compile "net.serenity-bdd:serenity-core:$serenityCoreVersion"
+    compile "net.serenity-bdd:serenity-junit:$serenityCoreVersion"
+    compile("net.serenity-bdd:serenity-journey:$serenityCoreVersion")
+    compile("net.serenity-bdd:browse-the-web:$serenityCoreVersion")
+    compile("net.serenity-bdd:serenity-cucumber:$serenityCucumberVersion")
+    compile("net.serenity-bdd:serenity-jbehave:$serenityJBehaveVersion")
 
 
     compile 'org.slf4j:slf4j-simple:1.7.12'
