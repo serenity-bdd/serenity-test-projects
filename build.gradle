@@ -7,9 +7,9 @@ repositories {
 }
 
 ext {
-    serenityCoreVersion = "1.1.25-SNAPSHOT"
+    serenityCoreVersion = "1.1.25-rc.5"
     serenityJBehaveVersion = "1.5.0"
-    serenityCucumberVersion = "1.1.2"
+    serenityCucumberVersion = "1.1.3"
 }
 
 task wrapper(type: Wrapper) {
@@ -60,7 +60,7 @@ subprojects {
     }
 
     task subProjectsCopyDeps(type: Copy) {
-        from configurations.runtime
+        from configurations.runtime + configurations.testCompile
         into project.projectDir.path + "/lib"
     }
 }
