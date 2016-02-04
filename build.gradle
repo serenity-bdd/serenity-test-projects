@@ -24,11 +24,13 @@ subprojects {
 
     configurations.all {
         def dependencies = [
-                "net.serenity-bdd:serenity-gradle-plugin": "${serenityCoreVersion}",
-                "net.serenity-bdd:serenity-core"         : "${serenityCoreVersion}",
-                "net.serenity-bdd:serenity-junit"        : "${serenityCoreVersion}",
-                "net.serenity-bdd:serenity-journey"      : "${serenityCoreVersion}",
-                "net.serenity-bdd:browse-the-web"        : "${serenityCoreVersion}"]
+            "net.serenity-bdd:serenity-gradle-plugin": "${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-core"         : "${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-junit"        : "${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-journey"      : "${serenityCoreVersion}",
+            "net.serenity-bdd:browse-the-web"        : "${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber"     : "${serenityCucumberVersion}",
+            "net.serenity-bdd:serenity-jbehave"      : "${serenityJBehaveVersion}"]
         resolutionStrategy.eachDependency { DependencyResolveDetails details ->
             if (dependencies["${details.requested.group}:${details.requested.name}"]) {
                 details.useVersion dependencies["${details.requested.group}:${details.requested.name}"]
@@ -47,7 +49,7 @@ subprojects {
         }
         configurations.all {
             def dependencies = [
-                    "net.serenity-bdd:serenity-gradle-plugin": "${serenityGradlePluginVersion}"]
+                "net.serenity-bdd:serenity-gradle-plugin": "${serenityGradlePluginVersion}"]
             resolutionStrategy.eachDependency { DependencyResolveDetails details ->
                 if (dependencies["${details.requested.group}:${details.requested.name}"]) {
                     details.useVersion dependencies["${details.requested.group}:${details.requested.name}"]
