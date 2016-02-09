@@ -7,8 +7,8 @@ repositories {
 
 ext{
     serenityCoreVersion = "1.1.25"
-    serenityJBehaveVersion = "1.5.0"
-    serenityCucumberVersion = "1.1.2"
+    serenityJBehaveVersion = "1.6.0"
+    serenityCucumberVersion = "1.1.5"
 }
 
 buildscript {
@@ -22,6 +22,8 @@ buildscript {
 }
 
 apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
 apply plugin: "net.serenity-bdd.aggregator"
 
 
@@ -47,21 +49,24 @@ dependencies {
 
 }
 
+
+test {
+    testLogging {
+       // showStandardStreams = true
+    }
+    /* Pass all system properties: */
+    systemProperties System.getProperties()
+
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.10'
 }
 
-test {
-    testLogging {
-       showStandardStreams = true
-    }
-    def properties = System.getProperties()
-//   properties.setProperty("serenity.outputDirectory", "${projectDir.toPath().resolve("target").resolve("site").resolve("serenity")}")
-    systemProperties properties
-    maxParallelForks = Runtime.runtime.availableProcessors()
+task copyDeps(type: Copy) {
+    from configurations.runtime + configurations.testCompile
+    into project.projectDir.path+"/lib"
 }
-
-jar.dependsOn(aggregate)
-
 
 gradle.startParameter.continueOnFailure = true

@@ -18,7 +18,6 @@ task wrapper(type: Wrapper) {
 
 gradle.startParameter.continueOnFailure = true
 
-
 subprojects {
     apply plugin: "java"
 
@@ -41,7 +40,7 @@ subprojects {
 
     buildscript {
         ext {
-            serenityGradlePluginVersion = "1.1.25-SNAPSHOT"
+            serenityGradlePluginVersion = "1.1.25"
         }
         repositories {
             mavenLocal()
