@@ -11,5 +11,6 @@
     <modules>
         <module>serenity-web-todomvc-core</module>
         <module>jbehave-without-examples</module>
+        <module>junit-serenity-tests</module>
     </modules>
 </project>
