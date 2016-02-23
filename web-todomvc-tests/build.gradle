@@ -40,7 +40,7 @@ subprojects {
 
     buildscript {
         ext {
-            serenityGradlePluginVersion = "1.1.26-rc.1"
+            serenityGradlePluginVersion = "1.1.26"
         }
         repositories {
             mavenLocal()
