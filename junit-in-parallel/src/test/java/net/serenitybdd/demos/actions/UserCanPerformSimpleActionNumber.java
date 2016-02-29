@@ -29,15 +29,9 @@ public class UserCanPerformSimpleActionNumber {
     @Steps
     ATodoUser jane;
 
-    @Managed(driver = "chrome")
-    WebDriver chrome;
-
-    @Managed(driver = "phantomjs")
-    WebDriver phantomjs;
-
     @Test
     public void do_some_action_number () {
-        jane.perform("some action for " + this.getClass().getName(), chrome);
-        jane.checkResult("some action" + this.getClass().getName(), "some action" + this.getClass().getName(), phantomjs);
+        jane.perform("some action for " + this.getClass().getName());
+        jane.checkResult("some action" + this.getClass().getName(), "some action" + this.getClass().getName());
     }
 }
