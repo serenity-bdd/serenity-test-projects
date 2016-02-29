@@ -11,7 +11,7 @@ public class SimplestAction {
 
     public void nothing() {
         try {
-            Thread.sleep(ThreadLocalRandom.current().nextInt(10, 100));
+            Thread.sleep(ThreadLocalRandom.current().nextInt(1, 4));
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

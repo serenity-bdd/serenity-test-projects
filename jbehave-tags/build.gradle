@@ -21,6 +21,17 @@ buildscript {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force "net.serenity-bdd:serenity-core:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-junit:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-screenplay:$serenityCoreVersion",
+            "net.serenity-bdd:browse-the-web:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-cucumber:$serenityCucumberVersion",
+            "net.serenity-bdd:serenity-jbehave:$serenityJBehaveVersion"
+    }
+}
+
 apply plugin: "java"
 apply plugin: "net.serenity-bdd.aggregator"
 
@@ -62,5 +73,9 @@ test {
 
 jar.dependsOn(aggregate)
 
+task copyDeps(type: Copy) {
+    from configurations.runtime + configurations.testCompile
+    into project.projectDir.path + "/lib"
+}
 
 gradle.startParameter.continueOnFailure = true

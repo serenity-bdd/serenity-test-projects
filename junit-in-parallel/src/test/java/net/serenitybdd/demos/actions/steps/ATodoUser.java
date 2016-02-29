@@ -15,14 +15,12 @@ public class ATodoUser {
     }
 
     @Step
-    public void perform(String actionName, WebDriver browser) {
-        browser.get("https://www.google.com/");
+    public void perform(String actionName) {
         this.action.nothing();
     }
 
     @Step
-    public void checkResult(String action, String result, WebDriver browser) {
-        browser.get("https://help.github.com/");
+    public void checkResult(String action, String result) {
         this.action.nothing();
     }
 }

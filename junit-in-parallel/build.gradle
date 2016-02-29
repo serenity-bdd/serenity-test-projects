@@ -12,12 +12,15 @@ ext {
 }
 
 buildscript {
+    ext {
+        serenityCoreVersion = "1.1.26"
+    }
     repositories {
         mavenLocal()
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.26")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityCoreVersion")
     }
 }
 
@@ -28,6 +31,18 @@ apply plugin: "net.serenity-bdd.aggregator"
 
 
 println "project.serenity.outputDirectory= ${project.serenity.outputDirectory}"
+
+configurations.all {
+    resolutionStrategy {
+        force "net.serenity-bdd:serenity-core:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-junit:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-screenplay:$serenityCoreVersion",
+            "net.serenity-bdd:browse-the-web:$serenityCoreVersion",
+            "net.serenity-bdd:serenity-cucumber:$serenityCucumberVersion",
+            "net.serenity-bdd:serenity-jbehave:$serenityJBehaveVersion"
+    }
+}
+
 
 dependencies {
     compile localGroovy()

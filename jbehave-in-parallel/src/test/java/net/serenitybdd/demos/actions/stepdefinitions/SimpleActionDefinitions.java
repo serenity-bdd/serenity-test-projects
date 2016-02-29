@@ -18,21 +18,15 @@ public class SimpleActionDefinitions {
     @Steps
     ATodoUser jane;
 
-    @Managed(driver = "chrome")
-    WebDriver chrome;
-
-    @Managed(driver = "phantomjs")
-    WebDriver phantomjs;
-
     @When("I perform \"$actionName\"")
     @Alias("I have performed \"$actionName\"")
     public void perform(String actionName) throws Throwable {
-        jane.perform(actionName, chrome);
+        jane.perform(actionName);
     }
 
     @Then("I expect result for \"$action\" should be \"$expected\"")
     @Alias("I have result for \"$action\" should be \"$expected\"")
     public void checkResultFor(String action, String expected) throws Throwable {
-        jane.checkResult(action, expected, phantomjs);
+        jane.checkResult(action, expected);
     }
 }
