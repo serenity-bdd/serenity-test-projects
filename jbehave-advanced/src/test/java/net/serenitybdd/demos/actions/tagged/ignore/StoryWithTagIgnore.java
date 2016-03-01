@@ -1,4 +1,4 @@
-package net.serenitybdd.demos.actions;
+package net.serenitybdd.demos.actions.tagged.ignore;
 
 import net.serenitybdd.jbehave.SerenityStories;
 

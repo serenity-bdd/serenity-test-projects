@@ -6,21 +6,21 @@ repositories {
 }
 
 ext{
-    serenityCoreVersion = "1.1.26"
-    serenityJBehaveVersion = "1.6.0"
+    serenityCoreVersion = "1.1.27"
+    serenityJBehaveVersion = "1.7.0"
     serenityCucumberVersion = "1.1.5"
 }
 
 buildscript {
     ext {
-        serenityCoreVersion = "1.1.26"
+        serenityCoreVersion = "1.1.27"
     }
     repositories {
         mavenLocal()
         jcenter()
     }
     dependencies {
-        classpath("net.serenity-bdd:serenity-gradle-plugin:1.1.26")
+        classpath("net.serenity-bdd:serenity-gradle-plugin:$serenityCoreVersion")
     }
 }
 
@@ -71,7 +71,7 @@ test {
     def properties = System.getProperties()
 //   properties.setProperty("serenity.outputDirectory", "${projectDir.toPath().resolve("target").resolve("site").resolve("serenity")}")
     systemProperties properties
-    maxParallelForks = Runtime.runtime.availableProcessors()
+    maxParallelForks = 1//Runtime.runtime.availableProcessors()
 }
 
 jar.dependsOn(aggregate)

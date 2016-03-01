@@ -1,4 +1,4 @@
-package net.serenitybdd.demos.actions;
+package net.serenitybdd.demos.actions.tagged.manual;
 
 import net.serenitybdd.jbehave.SerenityStories;
 
