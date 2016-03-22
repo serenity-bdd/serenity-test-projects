@@ -9,10 +9,11 @@ Meta:
 @tag tool:jbehave
 
 Given I need to <definition>
-When I add the todo action <action>
-Then <action> should be recorded in the "Active" items
+When I add the todo action "<action>"
+Then "<action>" should be recorded in the "Active" items
 Examples:
 |definition|action|
 |buy some milk|Buy some milk|
 |buy some sugar|Buy some sugar|
 |buy some tea|Buy some tea|
+
